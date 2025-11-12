@@ -163,17 +163,16 @@ plt.savefig('./img/Ex_1_g.pdf', format='pdf')
 
 # 1. i)
 
-# deoarece, bazat pe comportamentul uman, 
-# cele mai dese cicluri se intampla la
-# o perioada de minim 24 de ore si maxim o saptamana.
+# daca analizam rezultatele de la subpunctul f)
+# putem observa ca frecventele joase au magnitudinile
+# cele mai mari, iar cu cat frecventele sunt mai inalte
+# magnitudinea lor este mai mica
+# Astfel pentru a filtra, putem sa pastram frecventele joase
 
 T_min = 24 * 3600
-T_max = 24 * 7 * 3600
 f_min = 1/ T_min
-f_max = 1/ T_max
 
-filter = np.where(np.abs(freq_Ox) >= f_min, 1, 0)
-filter = np.where(np.abs(freq_Ox) <= f_max, 1, 0)
+filter = np.where(np.abs(freq_Ox) <= f_min, 1, 0)
 filtered_X = X * filter
 filtered_signal = np.real(np.fft.ifft(filtered_X))
 
