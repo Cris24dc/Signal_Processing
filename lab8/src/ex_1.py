@@ -47,7 +47,7 @@ plt.tight_layout()
 plt.savefig('./img/Ex_1_b.pdf', format='pdf')
 
 # 1. c)
-p = 20
+p = 50
 train_N = int(N * 0.80)
 
 y_target = time_series_y[p:train_N]
